@@ -9,7 +9,7 @@ spec:
   containers:
   - env:
     - name: ES_JAVA_OPTS
-      value: -Xms2g -Xmx2g
+      value: -Xms6g -Xmx6g
     - name: action.destructive_requires_name
       value: "true"
     - name: bootstrap.memory_lock
