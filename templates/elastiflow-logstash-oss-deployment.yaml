@@ -14,23 +14,23 @@ spec:
     metadata:
       labels:
         app: elastiflow-logstash
-  containers:
-  - env:
-    - name: ELASTIFLOW_DEFAULT_APPID_SRCTYPE
-      value: __UNKNOWN
-    - name: ELASTIFLOW_IPFIX_TCP_IPV4_PORT
-      value: "4739"
-    - name: ELASTIFLOW_NAMESERVER
-      value: 127.0.0.1
-    - name: ELASTIFLOW_NETFLOW_IPV4_PORT
-      value: "2055"
-    - name: ELASTIFLOW_RESOLVE_IP2HOST
-      value: "false"
-    - name: ELASTIFLOW_SFLOW_IPV4_PORT
-      value: "6343"
-    - name: LS_JAVA_OPTS
-      value: -Xms3g -Xmx3g
-    image: robcowart/elastiflow-logstash-oss:3.5.0_7.0.1
-    name: elastiflow-logstash-oss
-    resources: {}
+    containers:
+    - env:
+      - name: ELASTIFLOW_DEFAULT_APPID_SRCTYPE
+        value: __UNKNOWN
+      - name: ELASTIFLOW_IPFIX_TCP_IPV4_PORT
+        value: "4739"
+      - name: ELASTIFLOW_NAMESERVER
+        value: 127.0.0.1
+      - name: ELASTIFLOW_NETFLOW_IPV4_PORT
+        value: "2055"
+      - name: ELASTIFLOW_RESOLVE_IP2HOST
+        value: "false"
+      - name: ELASTIFLOW_SFLOW_IPV4_PORT
+        value: "6343"
+      - name: LS_JAVA_OPTS
+        value: -Xms3g -Xmx3g
+      image: robcowart/elastiflow-logstash-oss:3.5.0_7.0.1
+      name: elastiflow-logstash-oss
+      resources: {}
 status: {}

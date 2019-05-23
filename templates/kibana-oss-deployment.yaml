@@ -14,19 +14,19 @@ spec:
     metadata:
       labels:
         app: kibana
-  containers:
-  - env:
-    - name: ELASTICSEARCH_URL
-      value: http://127.0.0.1:9200
-    - name: KIBANA_DEFAULTAPPID
-      value: dashboard/653cf1e0-2fd2-11e7-99ed-49759aed30f5
-    - name: LOGGING_QUIET
-      value: "true"
-    - name: SERVER_HOST
-      value: 0.0.0.0
-    - name: SERVER_PORT
-      value: "5601"
-    image: docker.elastic.co/kibana/kibana-oss:7.0.1
-    name: elastiflow-kibana-oss
-    resources: {}
+    containers:
+    - env:
+      - name: ELASTICSEARCH_URL
+        value: http://127.0.0.1:9200
+      - name: KIBANA_DEFAULTAPPID
+        value: dashboard/653cf1e0-2fd2-11e7-99ed-49759aed30f5
+      - name: LOGGING_QUIET
+        value: "true"
+      - name: SERVER_HOST
+        value: 0.0.0.0
+      - name: SERVER_PORT
+        value: "5601"
+      image: docker.elastic.co/kibana/kibana-oss:7.0.1
+      name: elastiflow-kibana-oss
+      resources: {}
 status: {}
