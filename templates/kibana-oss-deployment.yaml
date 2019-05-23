@@ -1,4 +1,4 @@
-apiVersion: apps/v1
+apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   creationTimestamp: null
@@ -29,5 +29,4 @@ spec:
     image: docker.elastic.co/kibana/kibana-oss:7.0.1
     name: elastiflow-kibana-oss
     resources: {}
-  restartPolicy: Never
 status: {}

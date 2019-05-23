@@ -1,4 +1,4 @@
-apiVersion: apps/v1
+apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   creationTimestamp: null
@@ -33,5 +33,4 @@ spec:
     image: robcowart/elastiflow-logstash-oss:3.5.0_7.0.1
     name: elastiflow-logstash-oss
     resources: {}
-  restartPolicy: Never
 status: {}
