@@ -1,16 +1,23 @@
 apiVersion: apps/v1 
 kind: Deployment
 metadata:
-  name: elasticsearch-deployment
+  name: {{ template "elastiflow.fullname" . }}-elasticsearch-oss
+  labels:
+    app: {{ template "elastiflow.name" . }}
+    chart: {{ .Release.Name }}
+    release: {{ .Values.Instance }}
+    component: elasticsearch  
 spec:
-  selector:
-    matchLabels:
-      app: elasticsearch
   replicas: 1
+  strategy:
+    type: Recreate
   template:
     metadata:
       labels:
-        app: elasticsearch
+        app: {{ template "elastiflow.name" . }}
+        release: {{ .Release.Name }}
+        instance: {{ .Values.Instance }}
+        component: elasticsearch
     spec:
       containers:
       - name: elasticsearch

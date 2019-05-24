@@ -1,19 +1,24 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
-metadata:
-  creationTimestamp: null
+metadata:  
+  name: {{ template "elastiflow.fullname" . }}-kibana-oss
   labels:
-    io.kompose.service: elastiflow-kibana-oss
-  name: elastiflow-kibana-oss
+    app: {{ template "elastiflow.name" . }}
+    chart: {{ template "elastiflow.chart" . }}
+    release: {{ .Release.Name }}
+    instance: {{ .Values.Instance }}
+    component: kibana
 spec:
-  selector:
-    matchLabels:
-      app: kibana
   replicas: 1
+  strategy:
+    type: Recreate
   template:
     metadata:
       labels:
-        app: kibana
+        app: {{ template "elastiflow.name" . }}
+        release: {{ .Release.Name }}
+        instance: {{ .Values.Instance }}
+        component: kibana
     spec:
       containers:
       - env:

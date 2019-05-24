@@ -1,19 +1,24 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  creationTimestamp: null
+  name: {{ template "elastiflow.fullname" . }}-logstash-oss
   labels:
-    io.kompose.service: elastiflow-logstash-oss
-  name: elastiflow-logstash-oss
+    app: {{ template "elastiflow.name" . }}
+    chart: {{ template "elastiflow.chart" . }}
+    release: {{ .Release.Name }}
+    instance: {{ .Values.Instance }}
+    component: elastiflow-logstash
 spec:
-  selector:
-    matchLabels:
-      app: elastiflow-logstash
   replicas: 1
+  strategy:
+    type: Recreate
   template:
     metadata:
       labels:
-        app: elastiflow-logstash
+        app: {{ template "elastiflow.name" . }}
+        release: {{ .Release.Name }}
+        instance: {{ .Values.Instance }}
+        component: elastiflow-logstash
     spec:
       containers:
       - env:
