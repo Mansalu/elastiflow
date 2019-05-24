@@ -4,6 +4,8 @@
 
 Instance: global
 
+appVersion: "6.7.0"
+
 ## Define serviceAccount names for components. Defaults to component's fully qualified name.
 ##
 serviceAccounts:
