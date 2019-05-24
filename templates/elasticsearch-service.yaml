@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ template "elastiflow.fullname" . }}-kibana
+  name: {{ template "elastiflow.fullname" . }}-elasticsearch
   labels:
     app: {{ template "elastiflow.name" . }}
     chart: {{ template "elastiflow.chart" . }}
