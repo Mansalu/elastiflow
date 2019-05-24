@@ -10,10 +10,10 @@ metadata:
 spec:
   type: NodePort
   ports:  
-  - name: "URL"
+  - name: "url"
     port: 9200
     targetPort: 9200
-  - name: "SERVER_PORT"
+  - name: "server-port"
     port: 5601
     targetPort: 5601
   selector:

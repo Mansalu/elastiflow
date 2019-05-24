@@ -10,13 +10,13 @@ metadata:
 spec:
   type: NodePort
   ports:  
-  - name: "IPFIX"
+  - name: "ipfix"
     port: 4739
     targetPort: 4739
-  - name: "NETFLOW"
+  - name: "netflow"
     port: 2055
     targetPort: 2055
-  - name: "SFLOW"
+  - name: "sflow"
     port: 6343
     targetPort: 6343
   selector:
