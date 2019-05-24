@@ -24,3 +24,6 @@ spec:
         image: elasticsearch:7.0.1
         ports:
         - containerPort: 9200
+        volumeMounts:
+        - mountPath: /usr/share/elasticsearch/data
+          name: {{ template "elastiflow.fullname" . }}-elasticsearch-oss-claim0
