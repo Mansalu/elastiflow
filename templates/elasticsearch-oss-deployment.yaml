@@ -27,3 +27,7 @@ spec:
         volumeMounts:
         - mountPath: /usr/share/elasticsearch/data
           name: {{ template "elastiflow.fullname" . }}-elasticsearch-oss-claim0
+      volumes:
+      - name: {{ template "elastiflow.fullname" . }}-elasticsearch-oss-claim0
+        persistentVolumeClaim:
+          claimName: {{ template "elastiflow.fullname" . }}-elasticsearch-oss-claim0
